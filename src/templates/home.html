@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Weather app</title>
+</head>
+<body>
+    <h2>Weather App</h2>
+    <form action="/get_weather" method="post">
+        <label for="city">Enter city name</label>
+        <input type="text" name="city" id="city" placeholder="Allahabad"><br><br>
+        <input type="submit" value="Check weather">
+</form>
+
+<br><br>
+{% if data %}
+City : {{data['city']}}<br>
+{% if data['status']==200 %}
+Weather : {{data['weather']}}<br>
+Temperature : {{data['temp']}}  °C
+{% else %}
+Invalid City entered
+{% endif %}
+{% endif %}
+</body>
+</html>

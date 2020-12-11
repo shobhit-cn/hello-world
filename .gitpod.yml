@@ -1,5 +1,5 @@
 tasks:
-  - init: pipenv install flask
+  - init: pipenv install
     command: pipenv run python3 src/app.py
 
 ports:
