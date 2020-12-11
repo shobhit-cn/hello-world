@@ -1,0 +1,7 @@
+tasks:
+  - init: pip3 install -r requirements.txt
+    command: pipenv run python3 src/app.py
+
+ports:
+  - port: 8000
+    onOpen: open-preview
